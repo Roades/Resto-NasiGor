@@ -1,0 +1,85 @@
+:root {
+  --primary: #b6895b; /* Deklarasi warna utama dengan variabel CSS */
+  --bg: #010101; /* Deklarasi warna latar belakang dengan variabel CSS */
+}
+
+* {
+  margin: 0; /* Mengatur margin elemen menjadi 0 */
+  padding: 0; /* Mengatur padding elemen menjadi 0 */
+  box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran elemen */
+  outline: none; /* Menghapus outline dari elemen saat difokuskan atau aktif */
+  border: none; /* Menghapus semua border dari elemen */
+  text-decoration: none; /* Menghapus dekorasi teks seperti garis bawah pada elemen teks */
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Mengatur font keluarga untuk elemen body */
+  background-color: var(
+    --bg
+  ); /* Mengatur warna latar belakang menggunakan variabel CSS */
+  color: #fff; /* Mengatur warna teks menjadi putih */
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex; /* Menyusun elemen navbar secara horizontal */
+  justify-content: space-between; /* Menyelaraskan elemen navbar secara horizontal */
+  align-items: center; /* Menyelaraskan elemen navbar secara vertikal */
+  padding: 1.4rem 7%; /* Memberikan padding pada elemen navbar */
+  background-color: rgba(
+    1,
+    1,
+    1,
+    0.5
+  ); /* Mengatur warna latar belakang navbar dengan transparansi */
+  border-bottom: 1px solid #6b5137; /* Menambahkan border bawah pada navbar */
+  position: fixed; /* Membuat posisi navbar tetap di atas saat menggulir */
+  top: 0; /* Menempelkan navbar ke bagian atas halaman */
+  left: 0; /* Menempelkan navbar ke sisi kiri halaman */
+  width: 100%; /* Mengatur lebar navbar menjadi 100% lebar halaman */
+  z-index: 9999; /* Memberikan prioritas tinggi agar navbar tetap di atas elemen lain */
+}
+
+/* Elemen Navbar */
+.navbar .navbar-logo {
+  font-size: 1.7rem; /* Mengatur ukuran font menjadi 1.7rem */
+  font-weight: 700; /* Mengatur ketebalan font menjadi 700 (bold) */
+  color: #fff; /* Mengatur warna teks menjadi putih */
+  font-style: italic; /* Mengatur gaya font menjadi miring */
+}
+
+.navbar .navbar-logo span {
+  color: var(
+    --primary
+  ); /* Mengatur warna teks span di dalam navbar-logo menggunakan variabel primary */
+}
+
+.navbar .navbar-nav {
+  display: flex; /* Menyusun item-item navbar-nav secara horizontal */
+}
+
+.navbar .navbar-nav a {
+  color: #fff; /* Mengatur warna teks menjadi putih */
+  display: inline-block; /* Menjadikan elemen satu baris dengan elemen lainnya */
+  font-size: 1rem; /* Mengatur ukuran font menjadi 1rem */
+  margin: 0.5rem; /* Memberikan jarak luar elemen */
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary); /* Mengubah warna teks saat elemen a di-hover */
+}
+
+.navbar .navbar-nav a::after {
+  content: ""; /* Menambahkan konten kosong untuk pseudo-elemen */
+  display: block; /* Mengubah elemen menjadi blok untuk menampilkan border bawah */
+  padding-bottom: 0.5rem; /* Memberikan padding bawah untuk jarak border */
+  border-bottom: 0.1rem solid var(--primary); /* Menambahkan border bawah dengan warna primary */
+  transform: scaleX(
+    0
+  ); /* Memulai garis bawah dengan skala 0 (tidak terlihat) */
+  transition: 0.2s linear; /* Menambahkan transisi linear selama 0.2 detik */
+}
+
+.navbar .navbar-nav a:hover:after {
+  transform: scaleX(1); /* Menampilkan garis bawah sepenuhnya saat di-hover */
+}
